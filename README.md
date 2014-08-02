@@ -7,6 +7,14 @@
 * 基于信息上行的应用
 * 朋友圈文章发布系统
 
+快速开始
+=======
+
+请参考文章<http://lazy.changes.com.cn/html/655.html>
+
+通过SAE应用商店可以快速安装：<http://sae.sina.com.cn/?m=apps&a=detail&aid=164>
+
+
 运行环境
 =======
 
