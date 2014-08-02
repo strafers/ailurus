@@ -1,0 +1,46 @@
+<div class="article-list inner-item">
+  <p class="inner-title">文章列表</p>
+		<table class="table table-bordered">
+  			<thead>
+   				<tr>
+      				<th>标题</th>
+      		    <th>应用ID</th>
+      				<th>创建日期</th>
+              <th>修改日期</th>
+      				<th>操作</th>
+    			</tr>
+  			</thead>
+  			<tbody>
+          <?php if($articles):?>
+    			<?php foreach($articles as $art){ ?>
+              <tr>
+              <td><?=$art['title']?></td>
+              <td><?=$art['weixin_app_id']?></td>
+              <td><?=$art['create_time']?></td>
+              <td><?=$art['modify_time']?></td>
+              <td>
+                  <a class="abtn check-article" href="/<?=$art['md5_id']?>.ar">查看</a>&nbsp;&nbsp;
+                  <a class="abtn edit-article" href="/?c=admin&a=edit_article&id=<?=$art['md5_id']?>">修改</a>&nbsp;&nbsp;
+                  <a class="abtn delete-article" data-id="<?=$art['md5_id']?>">删除</a>
+              </td>
+              </tr>
+              <?php } ?>
+            <?php endif;?>
+  			</tbody>
+		</table>
+    <div id="de-article" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>删除文章</h3>
+      </div>
+      <div class="modal-body">
+        <p>确定要删除文章？</p>
+      </div>
+      <div class="modal-footer">
+        <input id="artid1" type="hidden">
+        <a id="off-delet" class="btn">关闭</a>
+        <a id="on-delet" class="btn btn-primary">确认</a>
+      </div>
+    </div>
+
+</div>	

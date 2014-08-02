@@ -1,0 +1,34 @@
+<div class="sidebar">
+	<ul>
+		<li class="title">配置</li>
+		<li class="item  <?php if(v('a')=='edit_config'):?> active-sidebar<?php endif;?>">
+		<a href="/?c=admin&a=edit_config">修改配置</a>
+		</li>
+		<li class="title">用户</li>
+		<li class="item <?php if(v('a')=='users'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=users">用户列表</a>
+		</li>
+		<li class="item <?php if(v('a')=='create_user'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=create_user">增加用户</a>
+		</li>
+		<li class="title">微信应用</li>
+		<li class="item <?php if(v('a')=='weixin_apps'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=weixin_apps">应用列表</a>
+		</li>
+		<li class="item <?php if(v('a')=='create_app'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=create_app">新增应用</a>
+		</li>
+		<li class="title">文章</li>
+		<li class="item <?php if(v('a')=='articles'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=articles">文章列表</a>
+		</li>
+		<li class="item <?php if(v('a')=='add_article'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=add_article">新增文章</a>
+		</li>
+		<li class="item <?php if(v('a')=='add_advertisement'):?> active-sidebar<?php endif;?>">
+			<a href="/?c=admin&a=add_advertisement">广告</a>
+		</li>
+	</ul>
+</div>
+   
+

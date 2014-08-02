@@ -1,0 +1,88 @@
+<div class="app-list inner-item">
+  <!--<?php var_dump($weixin_apps); ?>-->
+		<p class="inner-title">应用列表</p>
+    <table class="table table-bordered">
+  			<thead>
+   				<tr>
+      				<th>应用名称</th>
+      				<th>描述</th>
+      				<th>token</th>
+              <th>上行短信处理的类</th>
+              <th>创建日期</th>
+      				<th>操作</th>
+    			</tr>
+  			</thead>
+  			<tbody>
+          <?php foreach($weixin_apps as $app){ ?>
+              <tr>
+              <td><?=$app['app_name']?></td>
+              <td><?=$app['app_desc']?></td>
+              <td><?=$app['token']?></td>
+              <td><?=$app['action_class']?></td>
+              <td><?=$app['create_time']?></td>
+              <td class="act">
+                <span class="detail-api"><a class="abtn api-url"  href="<?=$verify_base_url.$app['id']?>">接口地址</a>
+                <a class="anchor-api" href="https://github.com/xiaosier/ailurus/blob/master/README.md#%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80" title="查看详细说明" target="_blank"><strong>？</strong></a></span>
+                &nbsp;&nbsp;
+                <a class="abtn modify-app"  data-id="<?=$app['id']?>">修改</a>&nbsp;&nbsp;
+                <a class="abtn delete-app"  data-id="<?=$app['id']?>">删除</a></td>
+              </tr>
+              <?php }?>
+  			</tbody>
+		</table>
+
+    <div  class="modal fade hide" id="app-info">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>应用信息</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputappname">应用名称</label>
+          <div class="controls">
+              <input type="text" id="appname-modal">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputdesc">描述</label>
+          <div class="controls">
+              <input type="text" id="desc-modal">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputtoken">token</label>
+          <div class="controls">
+              <input type="text" id="token-modal">
+          </div>
+        </div>
+        <input id="appid" type="hidden">
+        <div class="control-group">
+          <label class="control-label" for="inputaction-class">上行短信处理的类</label>
+          <div class="controls">
+              <input type="text" id="class-modal">
+          </div>
+        </div>      
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a id="app-close" class="btn">关闭</a>
+        <a id="app-save" class="btn btn-primary">保存</a>
+      </div>
+    </div>
+    <div id="de-app" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>删除应用</h3>
+      </div>
+      <div class="modal-body">
+        <p>确定要删除应用？</p>
+      </div>
+      <div class="modal-footer">
+        <input id="appid1" type="hidden">
+        <a id="off-dele" class="btn">关闭</a>
+        <a id="on-dele" class="btn btn-primary">确认</a>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+a.abtn{
+	cursor: pointer;
+}
+a.anchor-token,a.anchor-action,a.anchor-api{
+	text-decoration: none;
+	color:#000;
+	display:none;
+}
+a{
+	text-decoration:none;
+	color: #27a9e3;
+	outline: none;
+}
+
+div.app-list td.act{
+	width:200px;
+}
+
+
+div#app-info form{
+	margin-left:0;
+
+}
+div#app-info div.controls{
+	margin-left: 145px;
+}
+div#app-info form label.control-label{
+	width: 120px;
+}
+div.ad-list th.ad-url{
+	width: 650px;
+}

@@ -1,0 +1,39 @@
+.navbar .nav li a{
+	font-size:15px; 
+	text-shadow:none;
+	color:#FFF;
+	margin-top:5px;
+}
+div.navbar-inner{
+	background-image:none;
+	background-color: #37afe4;
+	border:none;
+	filter:progid:dximagetransform.microsoft.gradient(startColorstr='#37afe4',endColorstr='#37afe4');  //在IE浏览器里导航不出现背景色的问题
+}
+div.login{ 
+	display:inline-block;
+	float: right;
+	max-width: 50px;
+	margin-top: 15px;
+}
+div.login a{
+	font-size:15px; 
+	color:#FFF;
+	text-decoration: none;
+}
+div.topbar-dropdown{
+	margin:10px;
+	background-color:rgb(250,255,189);
+	position:absolute;
+	right:80px;
+	top:32px;
+}
+form.form-stacked{
+	margin:10px;
+}
+
+ul.login div.topbar-dropdown{
+	right:0;
+	top:30px;
+
+}

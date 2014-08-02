@@ -1,0 +1,83 @@
+<div class="user-list inner-item">
+		<p class="inner-title">用户列表</p>
+    <table class="table table-bordered">
+  			<thead>
+   				<tr>
+      				<th>用户名</th>
+      				<th>邮箱</th>
+      				<th>角色</th>
+      				<th>操作</th>
+    			</tr>
+  			</thead>
+  			<tbody>    		
+              <?php foreach($users as $user){ ?>
+              <tr>
+              <td class="nickname" ><?=$user['nickname']?></td>
+              <td><?=$user['email']?></td>
+              <td><?=$user['role']?></td>
+              <td><a class="abtn modify-user" data-id="<?=$user['id']?>">修改</a>&nbsp;&nbsp;
+                  <a class="abtn delete-user" data-id="<?=$user['id']?>">删除</a>
+              </td>
+              </tr>
+              <?php } ?>
+  			</tbody>
+		</table>
+    <div  class="modal fade hide" id="user-info">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>用户信息</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputusername">用户名</label>
+          <div class="controls">
+              <input type="text" id="username-modal" >
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputemail">邮箱</label>
+          <div class="controls">
+              <input type="text" id="email-modal">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputpassword">密码</label>
+          <div class="controls">
+              <input type="password" id="password-modal">
+          </div>
+        </div>
+        <input id="userid" type="hidden">
+        <div class="control-group">
+          <label class="control-label" for="inputrole">角色</label>
+          <div class="controls">
+              <select id="role-modal">
+              <option value="editor">编辑</option>
+              <option value="admin">管理员</option> 
+          </select>
+          </div>
+        </div>           
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a id="user-close" class="btn">关闭</a>
+        <a id="user-save" class="btn btn-primary">保存</a>
+      </div>
+    </div>
+
+    <div id="de-user" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>删除用户</h3>
+      </div>
+      <div class="modal-body">
+        <p>确定要删除用户？</p>
+      </div>
+      <div class="modal-footer">
+        <input id="userid1" type="hidden">
+        <a id="off-de" class="btn">关闭</a>
+        <a id="on-de" class="btn btn-primary">确认</a>
+      </div>
+    </div>
+
+</div>

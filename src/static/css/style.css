@@ -1,0 +1,35 @@
+html,body {
+  margin: 0;
+  padding:0;
+  height: 100%; 
+}
+div.contain{
+	min-height:99%;     /*实际应为100%*/
+  	height: auto !important;
+  	height: 100%; /*IE6不识别min-height*/
+  	position: relative; 
+}
+div.row-fluid{
+
+	margin-top:20px;
+	padding-bottom:40px;
+	
+}
+form{
+	margin-left: -100px;
+}
+div.topbar-dropdown{
+	background:#F3F2C5;
+	border-radius:4px;
+}
+p.inner-title{
+	font-size:20px;
+	font-weight: bold;
+	margin-bottom:30px;
+}
+.active-sidebar{
+	background-color: #F1F1F1;
+	font-weight:bold;
+}
+
+ 

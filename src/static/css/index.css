@@ -1,0 +1,87 @@
+body{
+	font-family:'microsoft yahei';
+}
+div.page{
+	padding-bottom: 40px;
+}
+div.feature{	
+	margin-top: 50px;
+	height:180px;
+	padding-top:40px;
+	background: #f5f5f5 url("/static/image/feature.png") left top;
+}	
+div.feature div.feature-info{
+	margin-left:auto;
+	margin-right:auto;
+	max-width:1000px;
+}
+
+div.feature-info p{
+	margin-top:30px;
+	font-size:16px;
+}
+
+ul.index-sidebar{
+	margin-top: 40px;
+	padding-left:55px;
+	border-right:1px solid #EEE;
+
+}
+ul.index-sidebar li{
+	list-style-type: none;
+}
+li.li-title{
+	padding:10px 5px;
+	font-size: 16px;
+	font-weight: bold;
+
+}
+li.li-item{
+	padding:5px 5px;
+}
+li.li-item a{
+	font-size:16px;
+	text-decoration: none;
+}
+
+div.content{
+	margin-top:40px; 
+	font-size:16px;
+}
+
+p.content-title{
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	
+}
+div.func{
+	margin-top:20px;
+}
+p.func-text{
+	width:350px;
+	font-size:18px;
+	line-height: 2.0;
+}
+
+
+
+ul.faq-list{
+	width:750px;
+}
+ul.faq-list li{
+	list-style-type: none;
+}
+li.faq-title{
+	font-size:20px;
+	padding:10px 5px;
+}
+li.faq-item{
+	font-size:14px;
+	padding:5px 15px;
+}
+
+
+
+

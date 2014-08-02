@@ -1,0 +1,66 @@
+<div class="add-advertisement inner-item">
+  <p class="inner-title">广告</p>
+	<form id="form_ad" class="form-horizontal" enctype="multipart/form-data" method="POST">
+		<div class="control-group">
+			<label class="control-label">微信应用</label>
+			<div class="controls">
+				<select id="app-id">
+				<?php foreach ($all_weixin_apps as $app):?>
+					<option value="<?=$app['id']?>"><?=$app['app_name']?></option>
+				<?php endforeach;?>
+				</select>
+			</div>
+		</div>
+        <div class="control-group">
+			<label class="control-label" for="vcode">上传图片</label>
+			<div class="controls">
+			 	<b id="holder"></b>
+				<input type="hidden" name="certificate_pic" id="certificate_pic" value="" data-id="">
+			</div>
+		</div>
+		<div class="controls">
+			<button id="add-ad" class="btn btn-primary">添加</button>
+		</div>
+	</form>
+	<div class="ad-list">
+		<table class="table table-bordered">
+  			<thead>
+   				<tr>
+      				<th class="ad-url">应用ID</th>
+      		    	<th>内容</th>
+      				<th>操作</th>
+    			</tr>
+  			</thead>
+  			<tbody>
+          <?php if($ads):?>
+    			<?php foreach($ads as $ad){ ?>
+              <tr>
+              <td><?=$ad['weixin_app_id']?></td>
+              <td><img src="<?=$ad['image_url']?>" width="40px" height="40px"></td>
+              <td>
+                  <a class="abtn delete-ad" data-id="<?=$ad['id']?>">删除</a>
+              </td>
+              </tr>
+              <?php } ?>
+            <?php endif;?>
+  			</tbody>
+		</table>
+
+		
+		<div id="de-ad" class="modal hide fade">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        		<h3>删除广告</h3>
+      		</div>
+      		<div class="modal-body">
+       			 <p>确定要删除广告？</p>
+      		</div>
+      		<div class="modal-footer">
+        		<input id="ad-id" type="hidden">
+        		<a id="off-ad" class="btn">关闭</a>
+        		<a id="on-ad" class="btn btn-primary">确认</a>
+      		</div>
+    	</div>
+	</div>
+	
+</div>

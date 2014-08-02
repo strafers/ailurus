@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?=$title?></title>
+	<link rel="stylesheet" href="static/css/article.css" media="screen">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="https://lib.sinaapp.com/js/jquery-mobile/1.3.1/jquery.mobile-1.3.1.css">
+	<script src="https://lib.sinaapp.com/js/jquery-mobile/1.3.1/jquery.mobile-1.3.1.js"></script>
+	
+</head>
+
+<body>
+
+<div data-role="page" id="article_page">
+
+	<div data-role="header" class="article-header">
+		<h2><?=$title?></h2>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-content">
+		<?=$html?>
+	</div><!-- /content -->
+
+	<div data-role="footer" class="article-footer">
+		<img src="<?=$ad_image_url?>" />
+	</div><!-- /footer -->
+	<div id="add_qrcode">
+	</div>
+
+</div><!-- /page -->
+
+<!--微信扫一扫模态框-->
+<div class="modal fade in" id="qr_weixin" style="display:none;">
+  <div class="modal-header">
+    <button type="button" class="close" id="close_qr">×</button>
+    <h5>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</h5>
+  </div>
+  <div class="modal-body">
+    <img src="<?=$qrcode?>" width="300px" height="300px"/>
+  </div>
+</div>
+<!--微信扫一扫模态框-->
+
+<script>
+	var qrcode = "<?=$qrcode?>";
+	
+	//页面图片的缩放
+	var imglist =document.getElementsByTagName("img"),_width;
+	doDraw();
+
+	window.onresize = function(){
+		doDraw();
+	}
+
+	function doDraw(){
+		_width = window.innerWidth;
+		for( var i = 0, len = imglist.length; i < len; i++){ 
+			DrawImage(imglist[i],_width); 
+		} 
+	}
+
+	function DrawImage(ImgD,_width){
+		var image=new Image();
+		image.src=ImgD.src;
+		image.onload = function(){
+			if(image.width>_width){
+			ImgD.width=_width;
+			}
+		}
+	}
+	//分享到微信-
+    function loadqrcode() {
+    	var nav=navigator.userAgent;
+ 		if((nav.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|wOSBrowser|BrowserNG|WebOS)/i))){
+        	
+    	}
+   		else{
+ 
+   			var add_qr=document.getElementById("add_qrcode");
+			add_qr.innerHTML="<button id=\"btn_share\">分享到微信</button>";
+   			document.getElementById("article_page").className="web-page";    //修改页面的样式  			
+    	}
+	}
+	loadqrcode();
+
+	function showqrcode(){
+		var btn=document.getElementById("btn_share");
+   		btn.onclick=function(){
+   			document.getElementById('qr_weixin').style.display="block";
+   		}
+   		var btn_close=document.getElementById("close_qr");
+   		btn_close.onclick=function(){
+   			document.getElementById('qr_weixin').style.display="none";
+   		}
+	}
+	showqrcode();
+</script>
+</body>
+</html>
